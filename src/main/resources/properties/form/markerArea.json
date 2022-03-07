@@ -1,0 +1,30 @@
+[
+   {
+      "title":"@@form.markerArea.annotateimages@@",
+      "properties":[
+         {
+            "name":"id",
+            "label":"@@form.markerArea.id@@",
+            "type":"TextField",
+            "required":"True",
+            "regex_validation":"^[a-zA-Z0-9_]+$",
+            "validation_message":"@@form.colorPicker.invalidId@@"
+         },
+         {
+            "name":"formDefId",
+            "label":"@@form.markerArea.mapping.form@@",
+            "type":"SelectBox",
+            "required":"True",
+            "options_ajax":"[CONTEXT_PATH]/web/json/console/app[APP_PATH]/forms/options"
+         },
+         {
+            "name":"annotationimage",
+            "label":"@@form.markerArea.annotationimage@@",
+            "type":"SelectBox",
+            "required":"True",
+            "options_ajax_on_change" : "formDefId",
+            "options_ajax":"[CONTEXT_PATH]/web/json/console/app[APP_PATH]/form/columns/options"
+         }
+      ]
+   }
+]
