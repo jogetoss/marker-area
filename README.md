@@ -1,6 +1,6 @@
 # Description
 
-This repository is meant to serve as a general template for how to set up new repositories in the JogetOSS organization. 
+This form element allows users to annotate on images in the runtime. 
 
 # Getting Help
 
