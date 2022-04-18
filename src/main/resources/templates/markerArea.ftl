@@ -7,6 +7,12 @@
 </div>
 <script src="${request.contextPath}/plugin/org.joget.marketplace.MarkerArea/js/markerjs2.js"/></script>
 
+<style>
+    div.__markerjs2_ *{
+        font-size: unset !important;
+    }
+</style>
+
 <script>
 
     let maState, sourceImage, targetRoot, markerArea;
