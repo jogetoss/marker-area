@@ -25,7 +25,7 @@ public class MarkerArea extends Element implements FormBuilderPaletteElement {
 
     @Override
     public String getVersion() {
-        return "7.0.0";
+        return "8.0.0";
     }
 
     @Override
@@ -88,16 +88,13 @@ public class MarkerArea extends Element implements FormBuilderPaletteElement {
         String primaryKeyValue = getPrimaryKeyValue(formData);
         
         FormRow row = new FormRow();
-        FormRowSet rowSet = appService.loadFormData(appDef.getAppId(), appDef.getVersion().toString(), formDefId, primaryKeyValue);
-        if (!rowSet.isEmpty()) {
-            row = rowSet.get(0);
-            image = row.getProperty(img);
+        if(primaryKeyValue != null){
+            FormRowSet rowSet = appService.loadFormData(appDef.getAppId(), appDef.getVersion().toString(), formDefId, primaryKeyValue);
+            if (!rowSet.isEmpty()) {
+                row = rowSet.get(0);
+                image = row.getProperty(img);
+            }
         }
-        
-        
-        
-        
-        
         
         try {
             File file = FileManager.getFileByPath(image);

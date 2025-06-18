@@ -2,20 +2,23 @@
 
 <div id="drawBox" style="padding: 20px 0;">
     <img src="${image}" id="myimgSrc" style="max-width: 100%;" onload="setSourceImage(this);"/>
-    <img src="${image}" id="myimg" style="max-width: 100%; position: absolute; left: 0; top: 0;" onclick="showMarkerArea(this);"/>
+    <img src="${image}" id="myimg" style="max-width: 100%; position: absolute; left: 0px;" onclick="showMarkerArea(this);"/>
     <input id="${elementParamName!}" name="${elementParamName!}" type="hidden" value="${value!?html}"/>
 </div>
-<script src="${request.contextPath}/plugin/org.joget.marketplace.MarkerArea/js/markerjs2.js"/></script>
+<script src="${request.contextPath}/plugin/org.joget.marketplace.MarkerArea/js/markerjs2.js"></script>
 
 <style>
     div.__markerjs2_ *{
         font-size: unset !important;
     }
+    .form-cell, .subform-cell {
+        padding-left: 0px !important;
+}
 </style>
 
 <script>
 
-    let maState, sourceImage, targetRoot, markerArea;
+    var maState, sourceImage, targetRoot, markerArea;
     
     function setSourceImage(source) {
       sourceImage = source;
@@ -46,7 +49,7 @@
         
     }
     
-    $(window).load(function() {
+    $(document).ready(function(){
         if( FormUtil.getField("${elementParamName!}").val() != "" ){
             maState = JSON.parse(FormUtil.getField("${elementParamName!}").val());
         }
