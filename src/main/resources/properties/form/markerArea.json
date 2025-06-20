@@ -11,6 +11,12 @@
             "validation_message":"@@form.colorPicker.invalidId@@"
          },
          {
+             "name":"label",
+             "label":"@@form.markerArea.label@@",
+             "type":"textfield",
+             "value":""
+         },
+         {
             "name":"formDefId",
             "label":"@@form.markerArea.mapping.form@@",
             "type":"SelectBox",
